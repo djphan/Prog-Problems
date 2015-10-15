@@ -1,0 +1,15 @@
+#include "stdio.h"
+
+int threenplusone (int n) {
+   
+
+}
+
+
+int main(void) 
+{
+    int a;
+
+    return 0;
+
+}
