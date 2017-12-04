@@ -113,8 +113,6 @@ def generateSumGrid(endPoint):
                     break 
 
                 grid.update({pos : [n, summedValue]})
-
-
                 print grid
 
         times_to_move+=1
