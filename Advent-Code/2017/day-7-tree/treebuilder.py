@@ -21,6 +21,7 @@ def findRootOfChristmasTree(inputFilePath):
     for i in children:
         roots.remove(i)
 
+    inputFile.close()    
     return roots
 
 #print findRootOfChristmasTree('day7testinput1.txt')
