@@ -1,12 +1,14 @@
 # Part 1
-# Root Node always has childern
+# Root Node always has children
 # Want to find the node that is not a child of another root
-# Process Text and track all childern and parents
+# Process Text and track all children and parents
 # Find the extra one
 # Ignore dangling nodes
 
 def findRootOfChristmasTree(inputFilePath):
     inputFile = open(inputFilePath, 'r')
+
+
     roots = set()
     children = set()
 
@@ -18,6 +20,7 @@ def findRootOfChristmasTree(inputFilePath):
         for i in processedLine[3:]:
             children.add(i.split('\n')[0].split(',')[0])
 
+    # track with two sets and id the remaining set
     for i in children:
         roots.remove(i)
 
@@ -27,6 +30,26 @@ def findRootOfChristmasTree(inputFilePath):
 #print findRootOfChristmasTree('day7testinput1.txt')
 #print findRootOfChristmasTree('day7input.txt')
 
+# Part 2
+# Note root is known
+# My puzzle uses: hlhomy for day 7 input
+# For test input use tknk
+def determineImmediateBranchSum(numberMap, treeMap, root):
+    # Start with base
+    outputSum = numberMap[root]
+
+    #Sum all children from the root node
+    if (treeMap[root] != set()):
+        for i in treeMap[root]:
+            outputSum += numberMap[i]
+
+    return outputSum
+
+
+# Note only one of the siblings should be different from the rest
+def traverseTree(numberMap, treeMap, root):
+
+    pass
 
 def findRootOfChristmasTree2(inputFilePath):
     inputFile = open(inputFilePath, 'r')
